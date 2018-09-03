@@ -1,0 +1,29 @@
+<?xml version="1.0" encoding="utf-8"?>
+<menu xmlns:android="http://schemas.android.com/apk/res/android">
+
+    <group android:checkableBehavior="single">
+        <item
+            android:id="@+id/nav_personal"
+            android:icon="@drawable/ic_menu_camera"
+            android:title="ข้อมูลส่วนตัว" />
+        <item
+            android:id="@+id/nav_recordmr"
+            android:icon="@drawable/ic_menu_manage"
+            android:title="อ่านหน่วยมิเตอร์" />
+        <item
+            android:id="@+id/nav_ReadMeter_offline"
+            android:icon="@drawable/ic_menu_manage"
+            android:title="อ่านหน่วยมิเตอร์ OFFLINE" />
+        <item
+            android:id="@+id/nav_SendReadMeter_offline"
+            android:icon="@drawable/ic_menu_manage"
+            android:title="ส่งข้อมูล OFFLINE" />
+        <item
+            android:id="@+id/nav_logout"
+            android:icon="@drawable/ic_menu_send"
+            android:title="ออกจากระบบ" />
+    </group>
+
+
+
+</menu>

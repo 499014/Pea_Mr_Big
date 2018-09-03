@@ -1,0 +1,138 @@
+<?xml version="1.0" encoding="utf-8"?>
+<android.support.design.widget.CoordinatorLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    tools:context="com.its.peac1.pea_mr_big.Activity_Mr_Register">
+
+<RelativeLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    android:layout_width="match_parent"
+    android:layout_below="@+id/toolbar_searchMaster"
+    android:layout_height="match_parent"
+    android:orientation="vertical">
+    <LinearLayout
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:orientation="vertical"
+        android:layout_alignParentStart="true">
+        <RelativeLayout xmlns:android="http://schemas.android.com/apk/res/android"
+            android:id="@+id/ra_x"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content">
+
+
+            <ImageView
+                android:id="@+id/imageButton_map"
+                android:layout_width="42dp"
+                android:layout_height="42dp"
+                android:layout_alignTop="@+id/textView"
+                android:src="@drawable/mapiconall"/>
+
+
+        <TextView
+            android:id="@+id/textView"
+            android:layout_toRightOf="@+id/imageButton_map"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:textColor="#000000"
+            android:text="รายการ"
+            android:textSize="19dp"
+            android:textStyle="bold"
+            android:textAppearance="?android:attr/textAppearanceLarge"/>
+        </RelativeLayout>
+        <RelativeLayout xmlns:android="http://schemas.android.com/apk/res/android"
+            android:id="@+id/ra_2"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content">
+
+
+            <TextView
+                android:id="@+id/Title_log_search"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_centerVertical="true"
+                android:layout_toRightOf="@+id/imageButton_log"
+                android:text="Search Data"
+                android:textColor="@android:color/black"
+                android:textSize="16sp" />
+
+            <ImageButton
+                android:id="@+id/imageButton_log"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_alignParentStart="true"
+                android:layout_alignTop="@+id/Title_log_search"
+                app:srcCompat="@drawable/ic_youtube_searched_for_black_24dp" />
+
+
+        </RelativeLayout>
+
+        <RelativeLayout xmlns:android="http://schemas.android.com/apk/res/android"
+            android:layout_width="match_parent"
+            android:id="@+id/ra"
+            android:layout_height="wrap_content">
+
+
+            <TextView
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:text="Synchronize Data"
+                android:textSize="16sp"
+                android:id="@+id/Title_log"
+                android:textColor="@android:color/black"
+                android:layout_centerVertical="true"
+                android:layout_toRightOf="@+id/imageButton"
+                />
+
+            <ImageButton
+                android:id="@+id/imageButton"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                app:srcCompat="@drawable/ic_sync_black_24dp"
+                android:layout_alignTop="@+id/Title_log"
+                android:layout_alignParentStart="true" />
+
+
+        </RelativeLayout>
+
+        <RelativeLayout xmlns:android="http://schemas.android.com/apk/res/android"
+            android:layout_width="match_parent"
+            android:id="@+id/R_Download"
+            android:layout_height="wrap_content">
+
+
+            <TextView
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:text="Download ข้อมูล"
+                android:textSize="16sp"
+                android:id="@+id/DownloadTitle_log"
+                android:textColor="@android:color/black"
+                android:layout_centerVertical="true"
+                android:layout_toRightOf="@+id/DownloadimageButton"
+                 />
+
+            <ImageButton
+                android:id="@+id/DownloadimageButton"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                app:srcCompat="@drawable/save"
+                android:layout_alignTop="@+id/DownloadTitle_log"
+                 />
+
+
+        </RelativeLayout>
+
+        <ListView
+            android:id="@+id/listview_mr_select_search_master"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:layout_alignParentStart="true"
+            android:layout_alignParentTop="true"
+            android:layout_below="@+id/ra_2"
+            />
+    </LinearLayout>
+</RelativeLayout>
+</android.support.design.widget.CoordinatorLayout>

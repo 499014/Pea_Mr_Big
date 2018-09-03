@@ -1,0 +1,54 @@
+<?xml version="1.0" encoding="utf-8"?>
+<FrameLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    tools:context=".Fragment_Mr_day_send_offline">
+
+    <!-- TODO: Update blank fragment layout -->
+    <RelativeLayout xmlns:android="http://schemas.android.com/apk/res/android"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        >
+        <RelativeLayout xmlns:android="http://schemas.android.com/apk/res/android"
+            android:layout_width="match_parent"
+            android:id="@+id/ra"
+            android:layout_height="wrap_content">
+
+
+
+
+
+        </RelativeLayout>
+        <TextView
+            android:id="@+id/textTitle1"
+            android:layout_below="@+id/ra"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:text="รายการทั้งหมด"
+            android:textColor="?attr/colorAccent"
+            android:textSize="30sp"
+            android:textStyle="bold" />
+
+        <Button
+            android:id="@+id/button_send_offline"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_below="@+id/textTitle1"
+            android:text="Button_send" />
+
+
+        <ListView
+            android:id="@+id/listview1"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:divider="#95a5ff"
+            android:dividerHeight="1dp"
+            android:layout_below="@+id/button_send_offline"
+            android:layout_alignParentStart="true" />
+
+
+    </RelativeLayout>
+
+</FrameLayout>
