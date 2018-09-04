@@ -150,6 +150,7 @@ public class Fragment_Mr_day_send_offline extends Fragment {
                     jsObject = new JsonObject() ;
                     jsObject.addProperty("URL",CurData.getString(3)) ;
                     Log.i("aaaaaaaaaaaaaaaaaasss",CurData.getString(0)+"|"+CurData.getString(1)+"|"+CurData.getString(3)) ;
+                   jsArray.add(jsObject);
                    // List_Item_mr_day.add(new Item_mr_day(CurData.getString(0), CurData.getString(1),"-", "-","Offline"));
                     CurData.moveToNext();
                 }
@@ -159,22 +160,23 @@ public class Fragment_Mr_day_send_offline extends Fragment {
                     Ion.with(getActivity())
                             .load("http://lai.pea.co.th/499014/")
                             .setJsonArrayBody(jsArray)
-                            .asJsonArray()
-                            .setCallback(new FutureCallback<JsonArray>() {
+                            .asString()
+                            .setCallback(new FutureCallback<String>() {
                                 @Override
 
-                                public void onCompleted(Exception e, JsonArray result) {
+                                public void onCompleted(Exception e, String result) {
                                     try{
                                         String xx = "xx";
+                                        /*
 
                                         for (int i = 0; i < result.size(); i++) {
                                             JsonElement elem = result.get(i);
                                             JsonObject obj = elem.getAsJsonObject();
                                             xx = xx + obj.get("Name").getAsString() ;
                                         }
-
+*/
                                         result.toString();
-                                        Toast.makeText(getActivity(), xx ,
+                                        Toast.makeText(getActivity(), result.toString() ,
                                                 Toast.LENGTH_LONG).show();
                                     }
                                     catch (Exception x)
