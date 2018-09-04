@@ -14,6 +14,16 @@ import android.view.ViewGroup;
 import android.widget.Button;
 import android.widget.ImageButton;
 import android.widget.ListView;
+import android.widget.Toast;
+
+import com.google.gson.JsonArray;
+import com.google.gson.JsonElement;
+import com.google.gson.JsonObject;
+import com.koushikdutta.async.future.FutureCallback;
+import com.koushikdutta.ion.Ion;
+
+import org.json.JSONArray;
+import org.json.JSONObject;
 
 import java.util.ArrayList;
 
@@ -133,11 +143,55 @@ public class Fragment_Mr_day_send_offline extends Fragment {
             public void onClick(View v) {
                 final myDBClass myDb = new myDBClass(getContext());
                 myDb.getWritableDatabase();
-                Cursor CurData = myDb.SelectMR_MEMBER_MRday_all() ;
+                Cursor CurData = myDb.SelectMR_OFFLINE_DATA() ;
+                JsonArray jsArray = new JsonArray() ;
+                JsonObject jsObject ;
                 while (!CurData.isAfterLast()) {
-                    Log.i("aaaaaaaaaaaaaaaaaasss",CurData.getString(0)+"|"+CurData.getString(2)+"|"+CurData.getString(3)) ;
+                    jsObject = new JsonObject() ;
+                    jsObject.addProperty("URL",CurData.getString(3)) ;
+                    Log.i("aaaaaaaaaaaaaaaaaasss",CurData.getString(0)+"|"+CurData.getString(1)+"|"+CurData.getString(3)) ;
                    // List_Item_mr_day.add(new Item_mr_day(CurData.getString(0), CurData.getString(1),"-", "-","Offline"));
                     CurData.moveToNext();
+                }
+
+                try
+                {
+                    Ion.with(getActivity())
+                            .load("http://lai.pea.co.th/499014/")
+                            .setJsonArrayBody(jsArray)
+                            .asJsonArray()
+                            .setCallback(new FutureCallback<JsonArray>() {
+                                @Override
+
+                                public void onCompleted(Exception e, JsonArray result) {
+                                    try{
+                                        String xx = "xx";
+
+                                        for (int i = 0; i < result.size(); i++) {
+                                            JsonElement elem = result.get(i);
+                                            JsonObject obj = elem.getAsJsonObject();
+                                            xx = xx + obj.get("Name").getAsString() ;
+                                        }
+
+                                        result.toString();
+                                        Toast.makeText(getActivity(), xx ,
+                                                Toast.LENGTH_LONG).show();
+                                    }
+                                    catch (Exception x)
+                                    {
+                                        Toast.makeText(getActivity(), x.toString() ,
+                                                Toast.LENGTH_LONG).show();
+                                    }
+
+
+
+                                }
+                            });
+                }
+                catch (Exception e)
+                {
+                    Toast.makeText(getActivity(), e.toString() ,
+                            Toast.LENGTH_LONG).show();
                 }
 
             }
